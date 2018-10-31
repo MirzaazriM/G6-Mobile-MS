@@ -1,0 +1,28 @@
+# home
+root:
+    path: /
+    defaults:
+        resource: "landing"
+    methods: [GET, POST]
+    
+action:
+    path: /{resource}{slash}{action}
+    requirements:
+        resource: "supplements"
+        slash: "[/]{0,1}"
+    methods: [GET, POST, PUT, DELETE]
+
+mobile:
+    path: /{resource}{slash}{action}
+    requirements:
+        resource: "mobile"
+        slash: "[/]{0,1}"
+    methods: [GET]
+
+monolog:
+    path: /{resource}{slash}{action}
+    requirements:
+        resource: "monolog"
+        slash: "[/]{0,1}"
+    methods: [GET, DELETE]
+
